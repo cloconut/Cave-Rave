@@ -10,7 +10,7 @@ grotto = Cave('Grotty Grotto')
 grotto.set_description('Filthy, grimey, grotty. Untouched since 1812.')
 
 dungeon = Cave('Dusty Dungeon')
-dungeon.set_description('A mass is emerging from the dark clouds of dust...')
+dungeon.set_description('Theres a rustling behind the dust... maybe a splashing?')
 
 lake = Cave('Lukewarm Lake')
 lake.set_description('A calm and tranquil lake, why dont I go for a dip?')
