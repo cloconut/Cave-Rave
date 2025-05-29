@@ -15,11 +15,11 @@ class Cave:
 
     # Set the cave name
     def set_name(self, cave_name):
-        cave_name = input('What will you name this cave?')
+        self.name = cave_name
 
     # Get the cave name
-    def get_name(self, cave_name):
-        print(cave_name)
+    def get_name(self):
+        return self.name
 
     # Character getting and setting ???????????
     def set_character(self, new_character):
@@ -35,3 +35,9 @@ class Cave:
     # Link cave method
     def link_cave(self, cave_to_link, direction):
         self.linked_caves[direction] = cave_to_link
+
+    # Cave details
+    def get_details(self):
+        for direction in self.linked_caves:
+            cave = self.linked_caves[direction]
+            print('The ' + cave.get_name() + ' is ' + direction)
