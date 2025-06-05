@@ -20,3 +20,7 @@ class Character():
     def fight(self, combat_item):
         print(self.name + "isn't bothered enough.")
         return True
+
+class Enemy(Character):
+    def __init__(self, char_name, char_description):
+        super().__init__(char_name, cahr_description)
