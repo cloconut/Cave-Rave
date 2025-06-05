@@ -70,4 +70,10 @@ tunnel.link_cave(mines, 'north')
 
 rave.link_cave(keep, 'north')
 
-cavern.get_details()
+# Game loop
+current_cave = cavern
+while True:
+    print('\n')
+    current_cave.get_details()
+    command = input('> ')
+    current_cave = current_cave.move(command)
