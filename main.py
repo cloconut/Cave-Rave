@@ -78,6 +78,41 @@ gribsy.set_conversation("You're wasting my time AND yours, my dear ignoramus.")
 gribsy.set_weakness("Ignorance")
 hollow.set_character(gribsy)
 
+# Marmite and Kibbie (Crusty Cavern)
+marmite = Enemy("Marmite", "Curious dust kitty.")
+marmite.set_conversation("Marm.")
+marnite.set_weakness("Crust")
+cavern.set_character(marmite)
+
+kibbie = Enemy("Kibbie", "Skittish dust kitty")
+marmite.set_conversation("Kibs")
+marnite.set_weakness("Dust")
+cavern.set_character(kibbie)
+
+# Humonculus (Dusty Dungeon)
+humonculus = Enemy("Humonculus", "A giant beastie made of stone")
+humonculus.set_conversation("Do you WANT your windshield bricked?")
+humonculus.set_weakness("Feather")
+dungeon.set_character(humonculus)
+
+# Gangalang (Tyrannical Tunnel)
+gangalang = Enemy("Gangalang", "Cause 3 enemies is the charm")
+gangalang.set_conversation("Stop right there! Right there? RIGHT THERE!!")
+gangalang.set_weakness("Marbles")
+tunnel.set_character(gangalang)
+
+# Boteko (Freaky Fissure)
+boteko = Enemy("Boteko", "This guy is kind of Jank.")
+boteko.set_conversation("Heart deedee, with a baby")
+boteko.set_weakness("Burning wood")
+fissure.set_character(boteko)
+
+# Krakeluss - (Kraken's Keep)
+krakeluss = Ememy("Krakeluss", "Hasn't seen the light of day in eons. Don't look into his eyes")
+krakeluss.set_conversation("This is the end, traveller.")
+krakeluss.set_weakness("Light")
+keep.set_character(krakeluss)
+
 # Game loop
 current_cave = hollow
 while True:

@@ -14,12 +14,13 @@ FRIENDS:
     Jemmie
 
 ENEMIES:
-    Gribsy
-    Marmite
-    Kibbie
-    Boteko
-    Humonculus
-    Krackeluss
+    Gribsy - Hollow
+    Marmite - Cavern
+    Kibbie - Cavern
+    Humonculus - Dungeon
+    Gangalang - Tunnel
+    Boteko - Fissure
+    Krackeluss - Keep
 
 WEAPONS:
 
