@@ -4,6 +4,7 @@ class Cave:
         self.name = cave_name
         self.description = None
         self.linked_caves = {}
+        self.character = None
 
     # Set the cave description
     def set_description(self, cave_description):

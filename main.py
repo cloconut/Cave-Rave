@@ -70,6 +70,10 @@ tunnel.link_cave(mines, 'north')
 
 rave.link_cave(keep, 'north')
 
+gribsy = Enemy("Gribsy", "Keeper of the Caves. His IQ is beyond your comprehension.")
+gribsy.set_conversation("You're wasting my time AND yours, my dear ignoramus.")
+gribsy.set_weakness("Ignorance")
+
 # Game loop
 current_cave = cavern
 while True:
