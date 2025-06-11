@@ -23,4 +23,17 @@ class Character():
 
 class Enemy(Character):
     def __init__(self, char_name, char_description):
-        super().__init__(char_name, cahr_description)
+        super().__init__(char_name, char_description)
+        self.weakness = None
+    # Enemy's weakness
+    def set_weakness(self, weakness):
+        self.weakness = weakness
+    # Combat item
+    def set_combat_item(self, combat_item):
+        self.combat_item = combat_item
+    # Initiate a fight
+    def fight(self, combat_item):
+        if combat_item == self.weakness:
+            print("[" + self.name + "]: " + "What... is that.")
+            print("You've discovered the enemy's weakness")
+            print("Attacker's defense has dropped by 50%")
