@@ -121,5 +121,19 @@ while True:
     inhabitant = current_cave.get_character()
     if inhabitant is not None:
         inhabitant.describe()
+    elif command == "talk":
+        if inhabitant is not None:
+            inhabitant.talk()
+    elif command == "fight":
+        if inhabitant is not None and isinstance(inhabitant, Enemy):
+            print("Choose your weaponry ")
+            combat_weapon = input()
+            if inhabitant.fight(combat_weapon) == True:
+                print("You have defeated the enemy.")
+                current_room.set_character(None)
+            else:
+                print("You have been defeated by the enemy")
+        else:
+            print("There is no enemy here to defeat")
     command = input('> ')
     current_cave = current_cave.move(command)
