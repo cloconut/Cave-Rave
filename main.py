@@ -115,7 +115,8 @@ keep.set_character(krakeluss)
 
 # Game loop
 current_cave = hollow
-while True:
+dead = False
+while dead == False:
     print('\n')
     current_cave.get_details()
     inhabitant = current_cave.get_character()
@@ -133,6 +134,8 @@ while True:
                 current_room.set_character(None)
             else:
                 print("You have been defeated by the enemy")
+                print("Your journey has come to an end")
+                dead = True
         else:
             print("There is no enemy here to defeat")
     command = input('> ')
