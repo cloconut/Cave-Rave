@@ -1,4 +1,6 @@
 from cave import Cave
+from character import Character
+from character import Enemy
 
 # Hollow
 hollow = Cave('Harrowing Hollow')
@@ -70,14 +72,19 @@ tunnel.link_cave(mines, 'north')
 
 rave.link_cave(keep, 'north')
 
+# Gribsy
 gribsy = Enemy("Gribsy", "Keeper of the Caves. His IQ is beyond your comprehension.")
 gribsy.set_conversation("You're wasting my time AND yours, my dear ignoramus.")
 gribsy.set_weakness("Ignorance")
+hollow.set_character(gribsy)
 
 # Game loop
-current_cave = cavern
+current_cave = hollow
 while True:
     print('\n')
     current_cave.get_details()
+    inhabitant = current_cave.get_character()
+    if inhabitant is not None:
+        inhabitant.describe()
     command = input('> ')
     current_cave = current_cave.move(command)
