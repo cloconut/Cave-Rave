@@ -1,10 +1,13 @@
-# Cave Class
+# - - - - - - - CAVE SUPERCLASS - - - - - - - #
+
 class Cave:
     def __init__(self, cave_name):
         self.name = cave_name
         self.description = None
         self.linked_caves = {}
         self.character = None
+
+# - - - - - - - METHODS (CAVE) - - - - - - - #
 
     # Set the cave description
     def set_description(self, cave_description):
@@ -50,3 +53,5 @@ class Cave:
         else:
             print("You can't go that way")
             return self
+
+# - - - - - - - x - - - - - - - #

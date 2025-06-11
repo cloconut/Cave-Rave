@@ -1,8 +1,13 @@
+# - - - - - - - CHARACTER SUPERCLASS - - - - - - - #
+
 class Character():
     def __init__(self, char_name, char_description):
         self.name = char_name.upper()
         self.description = char_description
         self.conversation = None
+
+# - - - - - - - METHODS CHARACTER - - - - - - - #
+
     # Describe the character
     def describe(self):
         print(self.name + ' is here!')
@@ -21,10 +26,15 @@ class Character():
         print(self.name + "isn't bothered enough.")
         return True
 
+# - - - - - - - ENEMY SUBCLASS - - - - - - - #
+
 class Enemy(Character):
     def __init__(self, char_name, char_description):
         super().__init__(char_name, char_description)
         self.weakness = None
+
+# - - - - - - - ENEMY METHODS - - - - - - - #
+
     # Enemy's weakness
     def set_weakness(self, weakness):
         self.weakness = weakness
@@ -37,3 +47,5 @@ class Enemy(Character):
             print("[" + self.name + "]: " + "What... is that.")
             print("You've discovered the enemy's weakness")
             print("Attacker's defense has dropped by 50%")
+
+# - - - - - - - x - - - - - - - #

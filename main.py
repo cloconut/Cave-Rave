@@ -1,76 +1,76 @@
+# - - - - - - - IMPORTING CLASSES - - - - - - - #
+
+# Cave
 from cave import Cave
+# Character
 from character import Character
 from character import Enemy
+
+# - - - - - - - CAVE INFORMATION - - - - - - - #
 
 # Hollow
 hollow = Cave('Harrowing Hollow')
 hollow.set_description('Its so empty in here...')
-
 # Cavern
 cavern = Cave('Crusty Cavern')
 cavern.set_description('A strangely crusty cave. The walls are... shedding?')
-
 # Grotto
 grotto = Cave('Grotty Grotto')
 grotto.set_description('Filthy, grimey, grotty. Untouched since 1812.')
-
 # Dungeon
 dungeon = Cave('Dusty Dungeon')
 dungeon.set_description('Theres a rustling behind the dust... maybe a splashing?')
-
 # Lake
 lake = Cave('Lukewarm Lake')
 lake.set_description('A calm and tranquil lake, why dont I go for a dip?')
-
 # Mines
 mines = Cave('Merchants Mines')
 mines.set_description('How neat. A one stop shop for all necessities.')
-
 # Keep
 keep = Cave('The Krakens Keep')
 keep.set_description('Theres something in the water.')
-
 # Fissure
 fissure = Cave('Freaky Fissure')
 fissure.set_description('Its said to be haunted in here, bah?')
-
 # Tunnel
 tunnel = Cave('Tyrannical Tunnel')
 tunnel.set_description('Its so cold...')
-
 # Rave
 rave = Cave('The Cave Rave')
 rave.set_description('Oh party party yah')
 
-# Linked Caves
+# - - - - - - - CAVE LINKS - - - - - - - #
 
+# Hollow
 hollow.link_cave(cavern, 'south')
-
+# Cavern
 cavern.link_cave(hollow, 'north')
 cavern.link_cave(grotto, 'east')
 cavern.link_cave(mines, 'south')
 cavern.link_cave(dungeon, 'west')
-
+# Grotto
 grotto.link_cave(lake, 'south')
 grotto.link_cave(cavern, 'east')
-
+# Dungeon
 dungeon.link_cave(cavern, 'east')
 dungeon.link_cave(keep, 'south')
-
+# Lake
 lake.link_cave(grotto, 'north')
-
+# Mines
 mines.link_cave(cavern, 'north')
 mines.link_cave(fissure, 'east')
 mines.link_cave(tunnel, 'south')
-
+# Keep
 keep.link_cave(dungeon, 'north')
 keep.link_cave(rave, 'south')
-
+# Fissure
 fissure.link_cave(mines, 'west')
-
+# Tunnel
 tunnel.link_cave(mines, 'north')
-
+# Rave
 rave.link_cave(keep, 'north')
+
+# - - - - - - - ENEMIES - - - - - - - #
 
 # Gribsy
 gribsy = Enemy("Gribsy", "Keeper of the Caves. His IQ is beyond your comprehension.")
@@ -113,7 +113,10 @@ krakeluss.set_conversation("This is the end, traveller.")
 krakeluss.set_weakness("Light")
 keep.set_character(krakeluss)
 
-# Game loop
+# - - - - - - - FRIENDS - - - - - - - #
+
+# - - - - - - - GAME LOOP - - - - - - - #
+
 current_cave = hollow
 dead = False
 while dead == False:
@@ -140,3 +143,5 @@ while dead == False:
             print("There is no enemy here to defeat")
     command = input('> ')
     current_cave = current_cave.move(command)
+
+# - - - - - - - x - - - - - - - #
