@@ -115,6 +115,10 @@ keep.set_character(krakeluss)
 
 # - - - - - - - FRIENDS - - - - - - - #
 
+jemmie = Friend("Jemmie", "Temmie cousin")
+jemmie.set_conversation("Need any help?")
+cavern.set_character(jemmie)
+
 # - - - - - - - DEFAULT STATS - - - - - - - #
 
 current_cave = hollow
@@ -147,6 +151,15 @@ while dead == False:
                 dead = True
         else:
             print("There is no enemy here to defeat")
+
+    elif command == "pat":
+        if inhabitant is not None:
+            if isinstance(inhabitant, Enemy):
+                print("You couldn't get close enough to pat" + inhabitant.name())
+            else:
+                inhabitant.pat()
+            else:
+                print("You tenderly caress absolutely nothing.")
 
     current_cave = current_cave.move(command)
 
