@@ -8,10 +8,14 @@ Each cave's description is based off of entires written by the previous explorer
 Select caves may contain mysterious monsters that once discovered, the player has to defeat.
 Friends and merchants who populate the caves will offer assistance at various points in the game.
 
+Weapons and spells can be found in different caves, alongside materials to craft them.
+
 CHARACTERS (In order of appearance)
 
 FRIENDS:
-    Jemmie
+    Jemmie - Cavern
+    Merchel - Mines
+    Marchus - Mines
 
 ENEMIES:
     Gribsy - Hollow
@@ -23,7 +27,6 @@ ENEMIES:
     Krackeluss - Keep
 
 WEAPONS:
-
 
 SPELLS:
 
