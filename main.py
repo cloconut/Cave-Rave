@@ -5,6 +5,8 @@ from cave import Cave
 # Character
 from character import Character
 from character import Enemy, Friend
+# Item
+from item import Item
 
 # - - - - - - - CAVE INFORMATION - - - - - - - #
 
@@ -118,6 +120,11 @@ keep.set_character(krakeluss)
 jemmie = Friend("Jemmie", "Temmie cousin")
 jemmie.set_conversation("Need any help?")
 cavern.set_character(jemmie)
+
+# - - - - - - - x - - - - - - - #
+
+blankitem = Item("Test Item", "For test purposes")
+hollow.set_item(blankitem)
 
 # - - - - - - - DEFAULT STATS - - - - - - - #
 
