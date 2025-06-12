@@ -81,12 +81,12 @@ hollow.set_character(gribsy)
 # Marmite and Kibbie (Crusty Cavern)
 marmite = Enemy("Marmite", "Curious dust kitty.")
 marmite.set_conversation("Marm.")
-marnite.set_weakness("Crust")
+marmite.set_weakness("Crust")
 cavern.set_character(marmite)
 
 kibbie = Enemy("Kibbie", "Skittish dust kitty")
-marmite.set_conversation("Kibs")
-marnite.set_weakness("Dust")
+kibbie.set_conversation("Kibs")
+kibbie.set_weakness("Dust")
 cavern.set_character(kibbie)
 
 # Humonculus (Dusty Dungeon)
@@ -108,28 +108,34 @@ boteko.set_weakness("Burning wood")
 fissure.set_character(boteko)
 
 # Krakeluss - (Kraken's Keep)
-krakeluss = Ememy("Krakeluss", "Hasn't seen the light of day in eons. Don't look into his eyes")
+krakeluss = Enemy("Krakeluss", "Hasn't seen the light of day in eons. Don't look into his eyes")
 krakeluss.set_conversation("This is the end, traveller.")
 krakeluss.set_weakness("Light")
 keep.set_character(krakeluss)
 
 # - - - - - - - FRIENDS - - - - - - - #
 
-# - - - - - - - GAME LOOP - - - - - - - #
+# - - - - - - - DEFAULT STATS - - - - - - - #
 
 current_cave = hollow
 dead = False
+
+# - - - - - - - LOOP - - - - - - - #
+
 while dead == False:
     print('\n')
     current_cave.get_details()
     inhabitant = current_cave.get_character()
+    command = input('> ')
+
     if inhabitant is not None:
         inhabitant.describe()
-    elif command == "talk":
-        if inhabitant is not None:
-            inhabitant.talk()
+
+    if command == "talk":
+        inhabitant.talk()
+
     elif command == "fight":
-        if inhabitant is not None and isinstance(inhabitant, Enemy):
+        if isinstance(inhabitant, Enemy):
             print("Choose your weaponry ")
             combat_weapon = input()
             if inhabitant.fight(combat_weapon) == True:
@@ -141,7 +147,7 @@ while dead == False:
                 dead = True
         else:
             print("There is no enemy here to defeat")
-    command = input('> ')
+
     current_cave = current_cave.move(command)
 
 # - - - - - - - x - - - - - - - #
