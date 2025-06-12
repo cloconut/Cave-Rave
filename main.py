@@ -128,6 +128,8 @@ hollow.set_item(blankitem)
 
 # - - - - - - - DEFAULT STATS - - - - - - - #
 
+bag = []
+
 current_cave = hollow
 dead = False
 
@@ -152,8 +154,14 @@ while dead == False:
     elif command == "fight":
         if isinstance(inhabitant, Enemy):
             print("Choose your weaponry ")
-            combat_weapon = input()
-            if inhabitant.fight(combat_weapon) == True:
+            weapon = input()
+
+            if weapon in bag:
+                print("You summon the weapon from your bag.")
+            else:
+                print("You don't have a " + weapon)
+                
+            if inhabitant.fight(weapon) == True:
                 print("You have defeated the enemy.")
                 current_room.set_character(None)
             else:
@@ -171,6 +179,14 @@ while dead == False:
                 inhabitant.pat()
         else:
             print("You tenderly caress absolutely nothing.")
+
+    elif command == "take":
+        if thing is not None:
+            print("You put the " + thing.name() + "in your bag")
+            bag.append(item.name())
+            current_room.set_item(None)
+        else:
+            print("There's nothing to take.")
 
     current_cave = current_cave.move(command)
 
