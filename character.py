@@ -47,5 +47,20 @@ class Enemy(Character):
             print("[" + self.name + "]: " + "What... is that.")
             print("You've discovered the enemy's weakness")
             print("Attacker's defense has dropped by 50%")
+    # Steal
+    def steal(self):
+        print("You steal from", + self.name)
+
+# - - - - - - - FRIEND SUBCLASS - - - - - - - #
+
+class Friend(Character):
+    def __init__(self, char_name, char_description):
+        super().__init__(char_name, char_description)
+        self.feeling = None
+
+# - - - - - - - FRIEND METHODS - - - - - - - #
+
+        def pat(self):
+            print(self.name + "pats you")
 
 # - - - - - - - x - - - - - - - #

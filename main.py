@@ -4,7 +4,7 @@
 from cave import Cave
 # Character
 from character import Character
-from character import Enemy
+from character import Enemy, Friend
 
 # - - - - - - - CAVE INFORMATION - - - - - - - #
 
