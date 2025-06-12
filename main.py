@@ -137,7 +137,11 @@ while dead == False:
     print('\n')
     current_cave.get_details()
     inhabitant = current_cave.get_character()
+    thing = current_cave.get_item()
     command = input('> ')
+
+    if thing is not None:
+        thing.describe()
 
     if inhabitant is not None:
         inhabitant.describe()
@@ -165,8 +169,8 @@ while dead == False:
                 print("You couldn't get close enough to pat" + inhabitant.name())
             else:
                 inhabitant.pat()
-            else:
-                print("You tenderly caress absolutely nothing.")
+        else:
+            print("You tenderly caress absolutely nothing.")
 
     current_cave = current_cave.move(command)
 
